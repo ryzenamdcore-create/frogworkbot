@@ -1,0 +1,153 @@
+{
+  "bot": {
+    "prefix": "!",
+    "panel_command": "панель",
+    "language": "ru",
+    "log_level": "info"
+  },
+  "discord": {
+    "guild_id": "1545917905198252142",
+    "access_role_ids": [
+      "1546157508035616908",
+      "1545921654394200105",
+      "1546157688415584336"
+    ],
+    "role_access_types": {
+      "1546157508035616908": "paid",
+      "1545921654394200105": "paid",
+      "1546157688415584336": "paid"
+    },
+    "admin_ids": [
+      "1027434824580997130"
+    ],
+    "panel_admin_ids": [
+      "1027434824580997130"
+    ],
+    "role_check": {
+      "mode": "any",
+      "process_existing_members_on_start": false
+    }
+  },
+  "minecraft": {
+    "edition": "java",
+    "nickname_min_length": 3,
+    "nickname_max_length": 16,
+    "nickname_pattern": "^[A-Za-z0-9_]{3,16}$",
+    "check_profile_exists": false,
+    "profile_check_timeout_ms": 10000,
+    "profile_check_retries": 2
+  },
+  "flow": {
+    "auto_dm_on_role": true,
+    "require_dm_reply": true,
+    "allow_manual_access": true,
+    "allow_paid_access": true,
+    "allow_free_access": true,
+    "allow_custom_message": true,
+    "prevent_duplicate_active_requests": true,
+    "prevent_duplicate_minecraft_nick": true,
+    "one_confirmation_per_request": true,
+    "edit_all_admin_messages_after_confirmation": true,
+    "retry_nickname_on_invalid": true,
+    "retry_nickname_on_profile_not_found": true,
+    "request_expiration_hours": 72,
+    "cooldown_seconds": 5
+  },
+  "storage": {
+    "requests_file": "./data/requests.json",
+    "save_after_every_change": true,
+    "restore_pending_requests_on_start": true
+  },
+  "notifications": {
+    "notify_all_admins": true,
+    "skip_unavailable_admins": true,
+    "dm_member_on_completion": true,
+    "dm_member_on_dm_failure": true,
+    "mention_member_in_admin_message": true
+  },
+  "security": {
+    "allow_commands_only_in_configured_guild": true,
+    "check_admin_id_on_every_panel_action": true,
+    "check_admin_id_on_confirmation": true,
+    "reject_expired_requests": true,
+    "reject_duplicate_confirmation": true,
+    "disable_confirmation_button_after_use": true
+  },
+  "colors": {
+    "primary": "#5865F2",
+    "success": "#57F287",
+    "warning": "#FEE75C",
+    "error": "#ED4245",
+    "paid": "#F1C40F",
+    "free": "#2ECC71"
+  },
+  "buttons": {
+    "confirm_added": {
+      "label": "Я добавил",
+      "emoji": "✅"
+    },
+    "paid_access": {
+      "label": "Платная проходка",
+      "emoji": "💳"
+    },
+    "free_access": {
+      "label": "Бесплатная проходка",
+      "emoji": "🎁"
+    },
+    "send_message": {
+      "label": "Отправить сообщение",
+      "emoji": "✉️"
+    },
+    "cancel": {
+      "label": "Отмена",
+      "emoji": "❌"
+    },
+    "submit": {
+      "label": "Отправить заявку",
+      "emoji": "📨"
+    }
+  },
+  "messages": {
+    "dm_welcome": "Привет, {user_mention}! 🎉\n\nТебе выдана платная проходка на наш Minecraft-сервер!\n\nВведи свой Minecraft-ник. Разрешены латинские буквы, цифры и _. Мы проверим формат ника и отправим заявку администраторам для добавления в вайтлист.",
+    "dm_nickname_prompt": "Введи свой Minecraft-ник сообщением в этот чат. Поддерживаются лицензированные и пиратские (offline-mode) серверы.",
+    "nickname_invalid_format": "❌ Ник `{nickname}` имеет неправильный формат. Разрешены латинские буквы, цифры и _. Длина — от 3 до 16 символов. Попробуй ещё раз.",
+    "nickname_profile_not_found": "Этот ник не прошёл проверку. Проверь написание и попробуй ещё раз.",
+    "nickname_check_failed": "Не удалось проверить формат ника. Попробуй ещё раз.",
+    "nickname_already_used": "Этот Minecraft-ник уже указан в другой заявке. Обратись к администратору, если это ошибка.",
+    "request_created": "✅ Ник `{minecraft_nick}` принят! Заявка отправлена администраторам.",
+    "request_already_exists": "ℹ️ Для тебя уже существует активная заявка. Повторно отправлять её не нужно.",
+    "admin_request_title": "Заявка на добавление в Minecraft whitelist",
+    "admin_request_description": "Игрок ожидает добавления в вайтлист.\n\n**Discord:** {user_mention}\n**Discord ID:** `{user_id}`\n**Minecraft ник:** `{minecraft_nick}`\n**Тип проходки:** {access_type}\n**Источник:** {source}\n**Причина:** {reason}\n**Номер заявки:** `{request_id}`\n\nПосле добавления игрока нажми кнопку ниже.",
+    "admin_request_footer": "Minecraft Whitelist • Заявка {request_id}",
+    "request_completed_title": "Игрок добавлен в вайтлист",
+    "request_completed_description": "✅ {admin_mention} подтвердил добавление игрока.\n\n**Discord:** {user_mention}\n**Minecraft Java:** `{minecraft_nick}`\n**Тип проходки:** {access_type}\n**Заявка:** `{request_id}`",
+    "request_already_completed": "Эта заявка уже закрыта пользователем {admin_mention}.",
+    "request_expired": "⌛ Срок действия заявки истёк. Обратись к администратору для повторной выдачи проходки.",
+    "dm_completed": "🎉 Администратор подтвердил добавление `{minecraft_nick}` в вайтлист Minecraft.",
+    "dm_failed": "⚠️ Не удалось отправить тебе сообщение в личные сообщения. Разреши ЛС от участников сервера и обратись к администратору.",
+    "panel_title": "Панель управления проходками",
+    "panel_description": "Выбери действие.",
+    "panel_no_permission": "⛔ У тебя нет прав для использования этой панели.",
+    "panel_wrong_server": "⛔ Эта команда недоступна на данном сервере.",
+    "panel_select_user": "Укажи Discord-пользователя, которому выдаётся проходка.",
+    "panel_select_nickname": "Введи Minecraft Java-ник пользователя.",
+    "panel_ask_reason": "Укажи причину или комментарий.",
+    "panel_confirm": "Проверь данные перед отправкой заявки.",
+    "panel_cancelled": "Действие отменено.",
+    "panel_request_created": "✅ Ручная заявка создана. Уведомления администраторам отправлены.",
+    "custom_message_prompt": "Введи сообщение, которое нужно отправить выбранному пользователю.",
+    "custom_message_sent": "✅ Сообщение отправлено.",
+    "custom_message_failed": "❌ Не удалось отправить сообщение. Возможно, у пользователя закрыты личные сообщения.",
+    "generic_error": "⚠️ Произошла ошибка. Попробуй ещё раз или обратись к разработчику бота.",
+    "bot_ready": "Бот запущен: {bot_tag}",
+    "admin_dm_failed": "⚠️ Не удалось доставить заявку администратору `{admin_id}`."
+  },
+  "access_types": {
+    "paid": {
+      "label": "Платная"
+    },
+    "free": {
+      "label": "Бесплатная"
+    }
+  }
+}
